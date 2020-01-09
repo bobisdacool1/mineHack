@@ -28,9 +28,8 @@ public class AntiBot extends Module {
 
     @EventTarget
     public void onReceivePacket(EventReceivePacket event) {
-        String mode = HackInit.instance.settingsManager.getSettingByName("AntiBot Mode").getValString();
 
-        if (mode.equalsIgnoreCase("Advanced") && event.getPacket() instanceof S0CPacketSpawnPlayer) {
+        if (HackInit.instance.settingsManager.getSettingByName("AntiBot Mode").getValString().equalsIgnoreCase("Advanced") && event.getPacket() instanceof S0CPacketSpawnPlayer) {
             S0CPacketSpawnPlayer packet = (S0CPacketSpawnPlayer)event.getPacket();
             double posX = packet.getX() /32D;
             double posY = packet.getY() /32D;

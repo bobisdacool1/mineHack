@@ -7,6 +7,7 @@ import org.lwjgl.input.Keyboard;
 import ru.kalispeller.HackedClient.event.EventTarget;
 import ru.kalispeller.HackedClient.event.events.EventUpdate;
 import ru.kalispeller.HackedClient.module.Category;
+import ru.kalispeller.HackedClient.module.GlobFunc;
 import ru.kalispeller.HackedClient.module.Module;
 
 import java.math.BigDecimal;
@@ -22,20 +23,10 @@ public class GetArrowPos extends Module {
     @Override
     public void onEnable() {
         super.onEnable();
-        mc.thePlayer.addChatMessage(new ChatComponentText("Hello, world!"));
     }
 
     private double prevPosX = 0, prevPosY = 0, prevPosZ = 0;
 
-
-    //ROUND FUNCTION
-    public static double round(double value, int places) {
-        if (places < 0) throw new IllegalArgumentException();
-
-        BigDecimal bd = BigDecimal.valueOf(value);
-        bd = bd.setScale(places, RoundingMode.HALF_UP);
-        return bd.doubleValue();
-    }
 
 
     @EventTarget
@@ -66,9 +57,9 @@ public class GetArrowPos extends Module {
                     playerPosY = mc.thePlayer.posY;
                     playerPosZ = mc.thePlayer.posZ;
 
-                    alertPosX = round (posX - playerPosX, 4);
-                    alertPosY = round (posY - playerPosY, 4);
-                    alertPosZ = round (posZ - playerPosZ, 4);
+                    alertPosX = GlobFunc.round(posX - playerPosX, 4);
+                    alertPosY = GlobFunc.round (posY - playerPosY, 4);
+                    alertPosZ = GlobFunc.round (posZ - playerPosZ, 4);
 
                     String text =  "X: " + alertPosX + " Y: " + alertPosY + " Z: " + alertPosZ;
                     mc.thePlayer.addChatMessage(new ChatComponentText(text));

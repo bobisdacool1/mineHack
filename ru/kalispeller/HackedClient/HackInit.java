@@ -8,6 +8,7 @@ import ru.kalispeller.HackedClient.event.EventTarget;
 import ru.kalispeller.HackedClient.event.events.EventKey;
 import ru.kalispeller.HackedClient.module.ModuleManager;
 import ru.kalispeller.HackedClient.module.combat.ReachHack;
+import ru.kalispeller.HackedClient.module.misc.FastBuild;
 
 public class HackInit {
     public String name = "Hacked Client", version = "0.0.1", creator = "Tabooscuscas";
@@ -19,6 +20,7 @@ public class HackInit {
     public ModuleManager moduleManager;
     public ClickGUI clickGui;
     public ReachHack reachHack;
+    public FastBuild fastBuild;
 
 
     public void startClient(){
@@ -27,6 +29,7 @@ public class HackInit {
         moduleManager = new ModuleManager();
         clickGui = new ClickGUI();
         reachHack = new ReachHack();
+        fastBuild = new FastBuild();
 
         System.out.println("[" + name + "] Starting client, b" + version + ", created by " + creator);
         Display.setTitle(name + " b" + version + " created by " + creator);

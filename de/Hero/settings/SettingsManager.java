@@ -1,9 +1,10 @@
 package de.Hero.settings;
 
-import java.util.ArrayList;
-
 import ru.kalispeller.HackedClient.HackInit;
 import ru.kalispeller.HackedClient.module.Module;
+
+import java.util.ArrayList;
+
 
 /**
  *  Made by HeroCode

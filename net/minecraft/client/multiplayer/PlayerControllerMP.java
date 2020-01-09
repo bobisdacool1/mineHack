@@ -25,8 +25,6 @@ import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldSettings;
 import ru.kalispeller.HackedClient.HackInit;
-import ru.kalispeller.HackedClient.module.combat.ReachHack;
-import tv.twitch.chat.Chat;
 
 public class PlayerControllerMP
 {
@@ -339,12 +337,13 @@ public class PlayerControllerMP
      * player reach distance = 4F
      */
 
-    public float getBlockReachDistance(){
-        mc.thePlayer.addChatMessage(new ChatComponentText("" + HackInit.instance.reachHack.reach));
-        if (HackInit.instance.reachHack.isReach()) {
-            return 6.5F;
+
+    public float getBlockReachDistance()
+    {
+        if (HackInit.instance.reachHack.reach != 0F) {
+            return HackInit.instance.reachHack.reach;
         } else {
-            return this.currentGameType.isCreative() ? 5.0F : 4.5F;
+            return this.currentGameType.isCreative() ? 4.0F : 4.5F;
         }
     }
 
@@ -599,7 +598,6 @@ public class PlayerControllerMP
     public boolean extendedReach()
     {
         return this.currentGameType.isCreative();
-//        return true;
     }
 
     /**

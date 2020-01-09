@@ -43,18 +43,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.EntitySelectors;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.EnumWorldBlockLayer;
-import net.minecraft.util.MathHelper;
-import net.minecraft.util.MouseFilter;
-import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.util.ReportedException;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Vec3;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldSettings;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -65,8 +54,8 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GLContext;
 import org.lwjgl.util.glu.Project;
+import ru.kalispeller.HackedClient.HackInit;
 import ru.kalispeller.HackedClient.event.events.Event3D;
-import ru.kalispeller.HackedClient.module.combat.ReachHack;
 
 public class EntityRenderer implements IResourceManagerReloadListener
 {
@@ -425,6 +414,11 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 boolean flag = false;
                 int i = 3;
 
+
+                if (HackInit.instance.reachHack.reach != 0F){
+                    d0 = HackInit.instance.reachHack.reach;
+                    d1 = d0;
+                } else {
                     if (this.mc.playerController.extendedReach())
                     {
                         d0 = 6.0D;
@@ -437,6 +431,8 @@ public class EntityRenderer implements IResourceManagerReloadListener
                             flag = true;
                         }
                     }
+                }
+
 
                 if (this.mc.objectMouseOver != null)
                 {

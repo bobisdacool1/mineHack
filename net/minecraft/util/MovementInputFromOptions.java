@@ -1,6 +1,8 @@
 package net.minecraft.util;
 
 import net.minecraft.client.settings.GameSettings;
+import ru.kalispeller.HackedClient.HackInit;
+import ru.kalispeller.HackedClient.module.misc.FastBuild;
 
 public class MovementInputFromOptions extends MovementInput
 {
@@ -39,10 +41,21 @@ public class MovementInputFromOptions extends MovementInput
         this.jump = this.gameSettings.keyBindJump.isKeyDown();
         this.sneak = this.gameSettings.keyBindSneak.isKeyDown();
 
-        if (this.sneak)
+        if (HackInit.instance.fastBuild.isSneak)
         {
             this.moveStrafe = (float)((double)this.moveStrafe * 0.3D);
             this.moveForward = (float)((double)this.moveForward * 0.3D);
+            this.sneak = true;
         }
+        else
+        {
+            if (this.sneak)
+            {
+                this.moveStrafe = (float)((double)this.moveStrafe * 0.3D);
+                this.moveForward = (float)((double)this.moveForward * 0.3D);
+            }
+        }
+
+
     }
 }

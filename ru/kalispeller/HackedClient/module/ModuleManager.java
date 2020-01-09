@@ -1,5 +1,7 @@
 package ru.kalispeller.HackedClient.module;
 
+import ru.kalispeller.HackedClient.module.misc.FastBuild;
+import ru.kalispeller.HackedClient.module.misc.GetArrowPos;
 import ru.kalispeller.HackedClient.module.movement.*;
 import ru.kalispeller.HackedClient.module.player.*;
 import ru.kalispeller.HackedClient.module.render.*;
@@ -30,7 +32,8 @@ public class ModuleManager {
         modules.add(new noFall());
 
         //MISC
-//        modules.add(new GetArrowPos());
+        modules.add(new GetArrowPos());
+        modules.add(new FastBuild());
 
         //NONE
 

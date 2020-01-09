@@ -1,8 +1,9 @@
 package de.Hero.clickgui.util;
 
+import ru.kalispeller.HackedClient.HackInit;
+
 import java.awt.Color;
 
-import ru.kalispeller.HackedClient.HackInit;
 
 /**
  *  Made by HeroCode

@@ -2,7 +2,6 @@ package ru.kalispeller.HackedClient.module;
 
 import net.minecraft.client.Minecraft;
 import ru.kalispeller.HackedClient.HackInit;
-import ru.kalispeller.HackedClient.module.combat.ReachHack;
 
 
 public class Module {
@@ -29,6 +28,7 @@ public class Module {
     public void onDisable() {
         HackInit.instance.eventManager.unregister(this);
     }
+
 
     public void onToggle() {
 
@@ -76,10 +76,6 @@ public class Module {
     }
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
-    }
-
-    public boolean isReach() {
-        return HackInit.instance.reachHack.reach;
     }
 
     public void setup() {

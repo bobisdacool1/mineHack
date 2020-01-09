@@ -19,7 +19,7 @@ public class ClickGUI extends Module {
         ArrayList<String> options = new ArrayList<>();
         options.add("New");
         options.add("JellyLike");
-        HackInit.instance.settingsManager.rSetting(new Setting("Design", this, "New", options));
+        HackInit.instance.settingsManager.rSetting(new Setting("Design", this, "JellyLike", options));
         HackInit.instance.settingsManager.rSetting(new Setting("Sound", this, true));
         HackInit.instance.settingsManager.rSetting(new Setting("GuiRed", this, 255, 0, 255, true));
         HackInit.instance.settingsManager.rSetting(new Setting("GuiGreen", this, 26, 0, 255, true));
